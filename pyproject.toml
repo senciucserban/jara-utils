@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "jara-utils"
-version = "0.1.0"
+version = "0.1.1"
 description = "A package with basic stuff."
 authors = ["Serban Senciuc <senciuc.serban@gmail.com>"]
 readme = "README_pypi.rst"
-repository = "https://github.com/senciucserban/jara"
+repository = "https://github.com/senciucserban/jara-utils"
 
 [tool.poetry.dependencies]
 python = "^3.9"
