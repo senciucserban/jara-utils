@@ -1,0 +1,35 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry install -E test
+
+    - name: Test with pytest
+      run: |
+        poetry run pytest --cov --junitxml=test-results/all.xml
+
+    - name: flake8
+      run: |
+        poetry run flake8
+
+    - name: mypy
+      run: |
+        poetry run mypy .
