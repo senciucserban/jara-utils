@@ -31,11 +31,7 @@ All exceptions:
 
 Environment
 ~~~~~~~~~~~
-A simple wrapper over ``os.environ.get(...)`` to easy handling environment variables, we have support for:
-    * sting
-    * int
-    * bool
-    * list
+A simple wrapper over ``os.environ.get(...)`` to easy handling environment variables, we have support for types like: string, int, bool, list
 
 **Watch out** ``get_list`` support only List of str to convert to a list of int for example you should use ``parse_int`` with a list comprehension.
 
@@ -59,6 +55,7 @@ CLI Output
 ~~~~~~~~~~
 Class used for output, which can be, console (by default), file or any buffer. Can be used for fancy outputs, like color text, highlight (bold) words.
 Color available and which method will produce the color:
+
 * Cyan (debug)
 * Light blue (info)
 * Light green (success)

@@ -21,10 +21,10 @@ How to contribute to the package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clone project locally and then:
 
-    * Install all dependencies including the test ones: ``poetry install -E test``;
-    * Do changes in the project;
-    * Create unittests (please make sure  you will keep coverage to 100%);
-    * Run all sanity commands (pytest, flake8, mypy)
+* Install all dependencies including the test ones: ``poetry install -E test``;
+* Do changes in the project;
+* Create unittests (please make sure  you will keep coverage to 100%);
+* Run all sanity commands (pytest, flake8, mypy)
 
 Note: Run commands using poetry: ``poetry run pytest``;
 
