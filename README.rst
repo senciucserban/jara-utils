@@ -48,11 +48,22 @@ A decorator named ``timeit`` which can be used on sync and async methods to see 
 
 Utils | Grouped by returned types.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* boolean
-* integer
-* string
-* datetime
-* iterable
+* boolean: ``str_2_bool``, ``is_dunder``, ``is_email``;
+* datetime: ``date_2_datetime``, ``str_2_datetime``;
+* integer: ``'parse_int``, ``age_from``;
+* iterable: ``grouper``;
+* string: ``snake_to_camel``, ``camel_to_snake``;
+
+
+CLI Output
+~~~~~~~~~~
+Class used for output, which can be, console (by default), file or any buffer. Can be used for fancy outputs, like color text, highlight (bold) words.
+Color available and which method will produce the color:
+* Cyan (debug)
+* Light blue (info)
+* Light green (success)
+* Yellow (warning)
+* Red (error/fail)
 
 
 .. _Sesotho: https://en.wikipedia.org/wiki/Sotho_language

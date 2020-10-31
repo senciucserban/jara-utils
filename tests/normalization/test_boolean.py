@@ -1,6 +1,6 @@
 import pytest
 
-from jara_utils.normalization.boolean import str_2_bool, is_dunder, is_email
+from jara_utils.normalization import str_2_bool, is_dunder, is_email
 
 
 @pytest.mark.parametrize(

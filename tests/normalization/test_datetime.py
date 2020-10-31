@@ -2,7 +2,7 @@ from datetime import datetime
 
 import pytz
 
-from jara_utils.normalization.datetime import date_2_datetime, str_2_datetime
+from jara_utils.normalization import date_2_datetime, str_2_datetime
 
 
 def test_date_2_datetime_ok(faker):

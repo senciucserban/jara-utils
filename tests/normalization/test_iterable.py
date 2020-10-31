@@ -1,5 +1,6 @@
-from jara_utils.normalization.iterable import grouper
 import math
+
+from jara_utils.normalization import grouper
 
 
 def test_grouper_ok(faker):

@@ -2,7 +2,7 @@ from datetime import datetime
 
 import pytest
 
-from jara_utils.normalization.integer import parse_int, age_from
+from jara_utils.normalization import parse_int, age_from
 
 
 @pytest.mark.parametrize(

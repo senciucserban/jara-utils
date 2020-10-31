@@ -1,6 +1,6 @@
 import pytest
 
-from jara_utils.normalization.string import snake_to_camel, camel_to_snake
+from jara_utils.normalization import snake_to_camel, camel_to_snake
 
 
 @pytest.mark.parametrize(
