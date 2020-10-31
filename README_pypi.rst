@@ -20,6 +20,7 @@ Sometimes I start a new project and I need to implement again same methods and a
 How to contribute to the package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clone project locally and then:
+
     * Install all dependencies including the test ones: ``poetry install -E test``;
     * Do changes in the project;
     * Create unittests (please make sure  you will keep coverage to 100%);
@@ -29,12 +30,11 @@ Note: Run commands using poetry: ``poetry run pytest``;
 
 What you will find in this package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Basically will contain utils methods to avoid write them in all projects.
+Basically will contain utils methods to avoid write them in all projects. Some examples:
 
-Some examples:
-    * decorator to benchmark methods;
-    * methods to handle environment variables;
-    * some utils methods such as: ``snake_2_camel``, ``str_2_bool``.
+* decorator to benchmark methods;
+* methods to handle environment variables;
+* some utils methods such as: ``snake_2_camel``, ``str_2_bool``.
 
 
 .. _Sesotho: https://en.wikipedia.org/wiki/Sotho_language

@@ -8,6 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
@@ -29,7 +30,7 @@ jobs:
         pip install poetry
         poetry install -E test
 
-    - name: Test with pytest
+    - name: pytest
       run: |
         poetry run pytest --cov --cov-fail-under=100 --junitxml=test-results/all.xml
 
