@@ -5,7 +5,7 @@ class JaraError(Exception):
     def __str__(self):
         return self.message
 
-    def __unicode__(self):
+    def __unicode__(self):  # pragma: no cover
         return self.message
 
 
