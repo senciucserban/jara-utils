@@ -37,8 +37,8 @@ class CLIOutput:
     def warning(self, text: str, highlights: Optional[List[str]] = None, crlf='\n'):
         self.write_stream(self._wrap(text, TextColor.YELLOW, highlights), crlf)
 
-    def error(self, text: Union[str, BaseException], highlights: Optional[List[str]] = None, crlf='\n'):
+    def error(self, text: Union[str], highlights: Optional[List[str]] = None, crlf='\n'):
         self.write_error(self._wrap(text, TextColor.RED, highlights), crlf)
 
-    def fail(self, text: Union[str, BaseException], highlights: Optional[List[str]] = None, crlf='\n'):
+    def fail(self, text: Union[str], highlights: Optional[List[str]] = None, crlf='\n'):
         self.error(text, highlights, crlf)
