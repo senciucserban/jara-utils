@@ -31,7 +31,7 @@ jobs:
 
     - name: Config poetry
       run: |
-        poetry config pypi-token.pypi ${{ secrets.PIPY_TOKEN }}
+        poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
 
     - name: Publish package
       run: |
