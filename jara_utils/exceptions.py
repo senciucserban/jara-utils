@@ -5,6 +5,9 @@ class JaraError(Exception):
     def __str__(self):
         return self.message
 
+    def __unicode__(self):
+        return self.message
+
 
 class EnvironmentVariableNotFound(JaraError):
     """Raise this exception when an environment variable is not defined, but should be."""

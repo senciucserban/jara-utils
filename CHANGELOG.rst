@@ -1,3 +1,9 @@
+0.1.4
+~~~~~
+01.11.2020
+    * Update annotation for CLIOutput.error and CLIOutput.fail;
+    * Update description;
+
 0.1.3
 ~~~~~
 01.11.2020

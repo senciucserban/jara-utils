@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jara-utils"
-version = "0.1.3"
+version = "0.1.4"
 description = "A package with basic stuff."
 authors = ["Serban Senciuc <senciuc.serban@gmail.com>"]
 readme = "README_pypi.rst"
