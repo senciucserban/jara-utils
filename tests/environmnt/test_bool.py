@@ -1,10 +1,12 @@
 import pytest
+from _pytest.monkeypatch import MonkeyPatch
+from faker import Faker
 
 from jara_utils.environment import get_bool
 from jara_utils.exceptions import EnvironmentVariableNotFound
 
 
-def test_required_ok(monkeypatch, faker):
+def test_required_ok(monkeypatch: MonkeyPatch, faker: Faker):
     variable_name = faker.word().upper()
     variable_value = faker.boolean()
     invalid = faker.boolean()
@@ -14,14 +16,14 @@ def test_required_ok(monkeypatch, faker):
     monkeypatch.delenv(variable_name)
 
 
-def test_raise_environment_variable_not_found(faker):
+def test_raise_environment_variable_not_found(faker: Faker):
     variable_name = faker.word().upper()
     with pytest.raises(EnvironmentVariableNotFound) as e:
         get_bool(variable_name, required=True)
     assert variable_name in str(e.value)
 
 
-def test_without_value(monkeypatch, faker):
+def test_without_value(monkeypatch: MonkeyPatch, faker: Faker):
     variable_name = faker.word().upper()
     invalid = faker.boolean()
     monkeypatch.setenv(variable_name, '')
@@ -29,7 +31,7 @@ def test_without_value(monkeypatch, faker):
     assert get_bool(variable_name, invalid=invalid) == invalid
 
 
-def test_wrong_type_value(monkeypatch, faker):
+def test_wrong_type_value(monkeypatch: MonkeyPatch, faker: Faker):
     variable_name = faker.word().upper()
     variable_value = faker.word()
     invalid = faker.boolean()
@@ -39,7 +41,7 @@ def test_wrong_type_value(monkeypatch, faker):
     monkeypatch.delenv(variable_name)
 
 
-def test_not_required_ok(monkeypatch, faker):
+def test_not_required_ok(faker: Faker):
     variable_name = faker.word().upper()
     invalid = faker.boolean()
     assert get_bool(variable_name) is None

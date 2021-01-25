@@ -4,7 +4,7 @@ from jara_utils.normalization import str_2_bool, is_dunder, is_email
 
 
 @pytest.mark.parametrize(
-    'value,result',
+    ('value', 'result'),
     [
         ('yes', True),
         ('true', True),
@@ -19,12 +19,12 @@ from jara_utils.normalization import str_2_bool, is_dunder, is_email
         ('invalid', None),
         ('', None),
     ])
-def test_str_2_bool(value, result):
+def test_str_2_bool(value: str, result: bool):
     assert str_2_bool(value) is result
 
 
 @pytest.mark.parametrize(
-    'value,result',
+    ('value', 'result'),
     [
         ('__init__', True),
         ('__something__', True),
@@ -35,12 +35,12 @@ def test_str_2_bool(value, result):
         ('____', False),
         ('__', False),
     ])
-def test_is_dunder(value, result):
+def test_is_dunder(value: str, result: bool):
     assert is_dunder(value) is result
 
 
 @pytest.mark.parametrize(
-    'value,result',
+    ('value', 'result'),
     [
         ('hello@world.com', True),
         ('hello@world.co.uk', True),
@@ -58,5 +58,5 @@ def test_is_dunder(value, result):
         ('hello@127.0.0.1:80', False),
         ('', False),
     ])
-def test_is_email(value, result):
+def test_is_email(value: str, result: bool):
     assert is_email(value) is result

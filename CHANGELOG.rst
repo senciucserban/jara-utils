@@ -1,3 +1,8 @@
+0.1.5
+~~~~~
+25.01.2020
+   * Add some flake8 plugins and bandit;
+
 0.1.4
 ~~~~~
 01.11.2020

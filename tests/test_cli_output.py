@@ -1,10 +1,14 @@
-import pytest
+from io import StringIO
 
+import pytest
+from faker import Faker
+
+from jara_utils.cli_output import CLIOutput
 from jara_utils.constants import TextColor
 
 
 @pytest.mark.parametrize(
-    'level,color', [
+    ('level', 'color'), [
         ('debug', TextColor.CYAN),
         ('info', TextColor.OKBLUE),
         ('success', TextColor.OKGREEN),
@@ -12,7 +16,8 @@ from jara_utils.constants import TextColor
         ('error', TextColor.RED),
         ('fail', TextColor.RED),
     ])
-def test_cli_output(faker, cli_output, stream_buffer, error_buffer, level, color):
+def test_cli_output(faker: Faker, cli_output: CLIOutput, stream_buffer: StringIO, error_buffer: StringIO,
+                    level: str, color: TextColor):
     word = faker.word()
     message = f'{faker.word()} {word} {faker.word()} {faker.word()} {faker.word()}'
 

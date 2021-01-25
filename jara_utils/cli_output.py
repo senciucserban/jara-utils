@@ -22,23 +22,23 @@ class CLIOutput:
     def write_stream(self, message: str, crlf: str):
         self.stream.write(message + crlf)
 
-    def write_error(self, message: str,  crlf: str):
+    def write_error(self, message: str, crlf: str):
         self.stream.write(message + crlf)
 
-    def debug(self, text: str, highlights: Optional[List[str]] = None, crlf='\n'):
+    def debug(self, text: str, highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.write_stream(self._wrap(text, TextColor.CYAN, highlights), crlf)
 
-    def info(self, text: str, highlights: Optional[List[str]] = None, crlf='\n'):
+    def info(self, text: str, highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.write_stream(self._wrap(text, TextColor.OKBLUE, highlights), crlf)
 
-    def success(self, text: str, highlights: Optional[List[str]] = None, crlf='\n'):
+    def success(self, text: str, highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.write_stream(self._wrap(text, TextColor.OKGREEN, highlights), crlf)
 
-    def warning(self, text: str, highlights: Optional[List[str]] = None, crlf='\n'):
+    def warning(self, text: str, highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.write_stream(self._wrap(text, TextColor.YELLOW, highlights), crlf)
 
-    def error(self, text: Union[str], highlights: Optional[List[str]] = None, crlf='\n'):
+    def error(self, text: Union[str], highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.write_error(self._wrap(text, TextColor.RED, highlights), crlf)
 
-    def fail(self, text: Union[str], highlights: Optional[List[str]] = None, crlf='\n'):
+    def fail(self, text: Union[str], highlights: Optional[List[str]] = None, crlf: str = '\n'):
         self.error(text, highlights, crlf)

@@ -41,3 +41,7 @@ jobs:
     - name: mypy
       run: |
         poetry run mypy .
+
+    - name: bandit
+      run: |
+        poetry run bandit . -r -c bandit.yaml
