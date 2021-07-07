@@ -1,6 +1,5 @@
 name: Python package
 
-
 on:
   push:
     branches: [ main ]
@@ -8,17 +7,16 @@ on:
     branches: [ main ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [ 3.6, 3.7, 3.8, 3.9 ]
+        python-version: [ 3.7, 3.8, 3.9 ]
 
     steps:
     - uses: actions/checkout@v1
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -31,17 +29,13 @@ jobs:
         poetry install -E test
 
     - name: pytest
-      run: |
-        poetry run pytest --cov --cov-fail-under=100 --junitxml=test-results/all.xml
+      run: poetry run pytest --cov --cov-fail-under=100 --junitxml=test-results/all.xml
 
     - name: flake8
-      run: |
-        poetry run flake8
+      run: poetry run flake8
 
     - name: mypy
-      run: |
-        poetry run mypy .
+      run: poetry run mypy .
 
     - name: bandit
-      run: |
-        poetry run bandit . -r -c bandit.yaml
+      run: poetry run bandit . -r -c bandit.yaml

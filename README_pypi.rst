@@ -20,13 +20,13 @@ Sometimes I start a new project and I need to implement again same methods and a
 How to contribute to the package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clone project locally and then:
+    * Install all dependencies including the test and the dev oanes: ``poetry install -E test -D``;
+    * Do changes in the project;
+    * Create unittests (please make sure  you will keep coverage to 100%);
+    * Run all sanity commands (pytest, flake8, mypy, bandit);
+    * Check if there is any duplicated or dead fixtures by running ``pytest`` with ``--dead-fixtures`` and ``--dup-fixtures``;
 
-* Install all dependencies including the test ones: ``poetry install -E test``;
-* Do changes in the project;
-* Create unittests (please make sure  you will keep coverage to 100%);
-* Run all sanity commands (pytest, flake8, mypy)
-
-Note: Run commands using poetry: ``poetry run pytest``;
+Note: Run commands using poetry: ``poetry run <command>``;
 
 What you will find in this package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

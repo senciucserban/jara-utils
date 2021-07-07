@@ -1,6 +1,9 @@
 .idea/
+update_output.txt
+
 pip-wheel-metadata/
 
+test-results/
 jara/commands/dry_run.py
 
 # Byte-compiled / optimized / DLL files

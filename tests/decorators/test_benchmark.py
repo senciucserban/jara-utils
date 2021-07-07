@@ -45,7 +45,7 @@ def test_timeit_on_sync_method_raise_an_exception(faker: Faker):
         method(faker.pyint(), faker.pyint())
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_timeit_on_async_method_ok(faker: Faker):
     @timeit
     async def method(my_arg: int, my_kwarg: int = None) -> str:
@@ -56,7 +56,7 @@ async def test_timeit_on_async_method_ok(faker: Faker):
     assert await method(arg) == f'{arg} - None'
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_timeit_on_async_method_from_a_class_ok(faker: Faker):
     class MyClass:
         @timeit
@@ -69,8 +69,9 @@ async def test_timeit_on_async_method_from_a_class_ok(faker: Faker):
     assert await my_class.method(arg) == f'{arg} - None'
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_timeit_on_async_method_with_custom_name(faker: Faker):
+    """Decorate an async method using a custom name"""
     @timeit(name='My async method')
     async def method(my_arg: int, my_kwarg: int = None) -> str:
         return f'{my_arg} - {my_kwarg}'
@@ -80,8 +81,9 @@ async def test_timeit_on_async_method_with_custom_name(faker: Faker):
     assert await method(arg) == f'{arg} - None'
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_timeit_on_async_method_raise_an_exception(faker: Faker):
+    """Raises an error"""
     @timeit
     async def method(my_arg: int, my_kwarg: int = None):
         raise ValueError('some error')

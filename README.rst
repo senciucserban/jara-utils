@@ -15,12 +15,13 @@ The package is available on pypi so you can install the project with ``pip insta
 How to contribute to the package?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clone project locally and then:
-    * Install all dependencies including the test ones: ``poetry install -E test``;
+    * Install all dependencies including the test and the dev oanes: ``poetry install -E test -D``;
     * Do changes in the project;
     * Create unittests (please make sure  you will keep coverage to 100%);
-    * Run all sanity commands (pytest, flake8, mypy)
+    * Run all sanity commands (pytest, flake8, mypy, bandit);
+    * Check if there is any duplicated or dead fixtures by running ``pytest`` with ``--dead-fixtures`` and ``--dup-fixtures``;
 
-Note: Run commands using poetry: ``poetry run pytest``;
+Note: Run commands using poetry: ``poetry run <command>``;
 
 What you can find in this repo?
 -------------------------------
@@ -39,7 +40,7 @@ Benchmark
 ~~~~~~~~~
 A decorator named ``timeit`` which can be used on sync and async methods to see execution time.
 
-    If execution time is below to ``0.50 seconds`` there will be no log. Works very well with ``enforce_types``.
+    If execution time is below to ``0.50 seconds`` there will be no log.
     **Maybe** add threshold as environment variable?
 
 Utils | Grouped by returned types.
@@ -64,10 +65,6 @@ Color available and which method will produce the color:
 
 
 .. _Sesotho: https://en.wikipedia.org/wiki/Sotho_language
-.. _Poetry: https://github.com/sdispater/poetry
-.. _Postman: https://www.getpostman.com
-.. _presentation: https://docs.google.com/presentation/d/1RbkpSnGvNpZUGb_rxZrdXsWu4NoraZtWeLaq7KSQMlg/edit
-.. _Enforce Annotation Source: https://stackoverflow.com/a/50622643/5676197
 
 .. |python| image:: https://img.shields.io/badge/python-3.7.x-blue.svg
     :alt: Python 3.7.x
