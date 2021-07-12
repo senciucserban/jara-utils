@@ -24,7 +24,7 @@ declare  -a optional=(
   "flake8" "flake8-quotes" "flake8-pytest-style" "flake8-comprehensions" "flake8-multiline-containers" "flake8-builtins"
   "flake8-print" "flake8-debugger" "flake8-simplify" "flake8-annotations"
 )
-declare -a dev=("pytest-sugar" "pytest-spec" "pytest-deadfixtures" "ipython" "ipdb")
+declare -a dev=("pytest-sugar" "pytest-deadfixtures" "ipython" "ipdb")
 
 
 update_packages "" "${required[@]}"
