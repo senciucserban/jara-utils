@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any
+from typing import Union, List, Optional
 
 import pytest
 from faker import Faker
@@ -17,7 +17,7 @@ from jara_utils.normalization import parse_int, age_from
         ([], None),
         (datetime.now(), None),
     ])
-def test_parse_int(value: Any, result: Any):
+def test_parse_int(value: Union[int, str, float, List, datetime], result: Optional[int]):
     assert parse_int(value) == result
 
 

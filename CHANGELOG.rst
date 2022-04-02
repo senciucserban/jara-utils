@@ -1,3 +1,10 @@
+0.3.0
+~~~~~
+03.01.2022
+    * Drop support for Python 3.7 and add support for Python 3.8;
+    * Add ``aenumerate`` and ``async_grouper``;
+    * Add ``flake8-commas`` and ``flake8-eradicate``;
+
 0.2.1
 ~~~~~
 13.07.2021

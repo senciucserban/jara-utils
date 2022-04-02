@@ -22,7 +22,7 @@ declare  -a required=(
 declare  -a optional=(
   "pytest" "pytest-cov" "pytest-asyncio" "faker" "bandit" "mypy"
   "flake8" "flake8-quotes" "flake8-pytest-style" "flake8-comprehensions" "flake8-multiline-containers" "flake8-builtins"
-  "flake8-print" "flake8-debugger" "flake8-simplify" "flake8-annotations"
+  "flake8-print" "flake8-debugger" "flake8-simplify" "flake8-annotations" "flake8-commas" "flake8-eradicate"
 )
 declare -a dev=("pytest-sugar" "pytest-deadfixtures" "ipython" "ipdb")
 

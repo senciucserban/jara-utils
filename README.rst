@@ -48,7 +48,7 @@ Utils | Grouped by returned types.
 * boolean: ``str_2_bool``, ``is_dunder``, ``is_email``;
 * datetime: ``date_2_datetime``, ``str_2_datetime``;
 * integer: ``'parse_int``, ``age_from``;
-* iterable: ``grouper``;
+* iterable: ``grouper``, ``async_grouper``, ``aenumerate``;
 * string: ``snake_to_camel``, ``camel_to_snake``;
 
 
