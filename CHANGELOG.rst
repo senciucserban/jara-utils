@@ -1,4 +1,14 @@
-0.3.0
+0.4.0
+~~~~~
+17.01.2023
+    * Add python 3.11 and remove 3.8 from CI/CD.
+    * Updating pytz (2022.1 -> 2022.7.1)
+    * Updating types-pytz (2021.3.6 -> 2022.7.1.0)
+    * Updating ipdb (0.13.9 -> 0.13.11)
+    * Updating ipython (8.2.0 -> 8.8.0)
+    * Updating pytest-sugar (0.9.4 -> 0.9.6)
+
+0.3.1
 ~~~~~
 03.01.2022
     * Update ``poetry.lock``;
