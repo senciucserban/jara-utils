@@ -1,4 +1,4 @@
-0.4.0
+1.0.0
 ~~~~~
 17.01.2023
     * Add python 3.11 and remove 3.8 from CI/CD.
