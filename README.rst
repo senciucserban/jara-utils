@@ -66,9 +66,9 @@ Color available and which method will produce the color:
 
 .. _Sesotho: https://en.wikipedia.org/wiki/Sotho_language
 
-.. |python| image:: https://img.shields.io/badge/python-3.7.x-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.11.x-blue.svg
     :alt: Python 3.7.x
-    :target: https://www.python.org/downloads/release/python-374/
+    :target: https://www.python.org/downloads/release/python-3111/
 .. |flake8| image:: https://img.shields.io/badge/code_style-flake8-brightgreen.svg
     :alt: Flake8
     :target: http://flake8.pycqa.org/en/latest/
