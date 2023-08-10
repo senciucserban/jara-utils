@@ -1,6 +1,5 @@
 import pytest
-
-from jara_utils.normalization import snake_to_camel, camel_to_snake
+from jara_utils.normalization import camel_to_snake, snake_to_camel
 
 
 @pytest.mark.parametrize(
@@ -14,8 +13,9 @@ from jara_utils.normalization import snake_to_camel, camel_to_snake
         ('snake__case', 'Snake_Case'),  # Da fuq?
         ('snake_case__', 'SnakeCase__'),  # Da fuq?
         ('this_is_a_snake_case_string', 'ThisIsASnakeCaseString'),
-    ])
-def test_snake_to_camel_with_upper_true(value: str, result: str):
+    ],
+)
+def test_snake_to_camel_with_upper_true(value: str, result: str) -> None:
     assert snake_to_camel(value) == result
 
 
@@ -29,8 +29,9 @@ def test_snake_to_camel_with_upper_true(value: str, result: str):
         ('_snake_case', 'SnakeCase'),
         ('snake__case', 'snake_Case'),  # Da fuq?
         ('this_is_a_snake_case_string', 'thisIsASnakeCaseString'),
-    ])
-def test_snake_to_camel_with_upper_false(value: str, result: str):
+    ],
+)
+def test_snake_to_camel_with_upper_false(value: str, result: str) -> None:
     assert snake_to_camel(value, upper=False) == result
 
 
@@ -44,6 +45,7 @@ def test_snake_to_camel_with_upper_false(value: str, result: str):
         ('camel', 'camel'),
         ('Camel', 'camel'),
         ('CAMEL', 'came_l'),  # Da fuq?
-    ])
-def test_camel_to_snake(value: str, result: str):
+    ],
+)
+def test_camel_to_snake(value: str, result: str) -> None:
     assert camel_to_snake(value) == result

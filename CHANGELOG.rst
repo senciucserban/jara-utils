@@ -1,3 +1,14 @@
+1.1.0
+~~~~~
+10.08.2023
+    * Remove `update.sh` script;
+    * Remove `flake8` and all the flake8 plugins;
+    * Add `ruff` and `black`
+    * Apply changes required by `ruff` and `black`
+    * Move `setup.cfg` to `pyproject.toml`
+    * Rename `exceptions.EnvironmentVariableNotFound` to `exceptions.EnvironmentVariableNotFoundError`
+    * Remove `update.sh` script
+
 1.0.0
 ~~~~~
 17.01.2023

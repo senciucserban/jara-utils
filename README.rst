@@ -28,7 +28,7 @@ What you can find in this repo?
 Exceptions
 ~~~~~~~~~~
 All exceptions:
-    * ``EnvironmentVariableNotFound`` when you expect to found an environment variable.
+    * ``EnvironmentVariableNotFoundError`` when you expect to found an environment variable.
 
 Environment
 ~~~~~~~~~~~

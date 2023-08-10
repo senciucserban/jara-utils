@@ -1,23 +1,31 @@
+# ruff: noqa: ARG001, PLR0913
 from io import StringIO
 
 import pytest
 from faker import Faker
-
 from jara_utils.cli_output import CLIOutput
 from jara_utils.constants import TextColor
 
 
 @pytest.mark.parametrize(
-    ('level', 'color'), [
+    ('level', 'color'),
+    [
         ('debug', TextColor.CYAN),
         ('info', TextColor.OKBLUE),
         ('success', TextColor.OKGREEN),
         ('warning', TextColor.YELLOW),
         ('error', TextColor.RED),
         ('fail', TextColor.RED),
-    ])
-def test_cli_output(faker: Faker, cli_output: CLIOutput, stream_buffer: StringIO, error_buffer: StringIO,
-                    level: str, color: TextColor):
+    ],
+)
+def test_cli_output(
+    faker: Faker,
+    cli_output: CLIOutput,
+    stream_buffer: StringIO,
+    error_buffer: StringIO,
+    level: str,
+    color: TextColor,
+) -> None:
     word = faker.word()
     message = f'{faker.word()} {word} {faker.word()} {faker.word()} {faker.word()}'
 

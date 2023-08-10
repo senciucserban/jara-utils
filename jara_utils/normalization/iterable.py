@@ -1,6 +1,5 @@
-from typing import Iterable, Generator, AsyncIterable, AsyncGenerator
-
 import itertools
+from collections.abc import AsyncGenerator, AsyncIterable, Generator, Iterable
 
 
 def grouper(n: int, iterable: Iterable) -> Generator:

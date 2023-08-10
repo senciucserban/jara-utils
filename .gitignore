@@ -54,6 +54,7 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+testresult.xml
 
 # Translations
 *.mo
@@ -110,3 +111,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ruff
+.ruff_cache

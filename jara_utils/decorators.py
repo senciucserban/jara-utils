@@ -1,19 +1,20 @@
 import inspect
 import logging
 import time
+from collections.abc import Callable
 from functools import wraps
-from typing import Any, Callable, Optional
+from typing import Any
 
 log = logging.getLogger(__name__)
 
 
 def timeit(*args, **kwargs) -> Any:
-    """A method decorator which can be applied on async and normal methods."""
+    """A method decorator which can be applied on async and sync methods."""
 
-    def _log_execution(start: float, name: Optional[Any], coro: Callable, coro_args: Any):
+    def _log_execution(start: float, name: Any | None, coro: Callable) -> None:
         total = time.time() - start
-        if total >= 0.5:  # pragma: no cover
-            log.warning(f'{name if name else coro.__name__} finished after %.3f seconds' % total)
+        if total >= kwargs.get('threshold', 0.5):  # pragma: no cover
+            log.warning(f'{name if name else coro.__name__} finished after %.3f seconds' % total)  # noqa: G002
 
     def inner(coro: Callable) -> Callable:
         @wraps(coro)
@@ -23,7 +24,7 @@ def timeit(*args, **kwargs) -> Any:
             try:
                 return await coro(*coro_args, **coro_kwargs)
             finally:
-                _log_execution(start, name, coro, coro_args)
+                _log_execution(start, name, coro)
 
         @wraps(coro)
         def timed(*coro_args, **coro_kwargs) -> Any:
@@ -33,7 +34,7 @@ def timeit(*args, **kwargs) -> Any:
             try:
                 return coro(*coro_args, **coro_kwargs)
             finally:
-                _log_execution(start, name, coro, coro_args)
+                _log_execution(start, name, coro)
 
         if inspect.iscoroutinefunction(coro):
             return wrapped
@@ -41,5 +42,4 @@ def timeit(*args, **kwargs) -> Any:
 
     if args:
         return inner(*args)
-    else:
-        return inner
+    return inner
