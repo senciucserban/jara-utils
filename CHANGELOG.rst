@@ -8,6 +8,7 @@
     * Move `setup.cfg` to `pyproject.toml`
     * Rename `exceptions.EnvironmentVariableNotFound` to `exceptions.EnvironmentVariableNotFoundError`
     * Remove `update.sh` script
+    * Drop support for 3.9
 
 1.0.0
 ~~~~~
