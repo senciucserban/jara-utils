@@ -29,3 +29,8 @@ def dotenv_invalid_paths() -> list[Path]:
 @pytest.fixture(autouse=True)
 def _set_system_env(system_env_variable_name: str, system_env_variable_value: str) -> None:
     os.environ[system_env_variable_name] = system_env_variable_value
+
+
+@pytest.fixture(autouse=True)
+def _clear_environment_variables() -> None:
+    [os.environ.pop(v, None) for v in ['JARA_UTILS_NONE', 'JARA_UTILS_EMPTY_STRING', 'JARA_UTILS_USERNAME']]
