@@ -92,6 +92,8 @@ celerybeat-schedule
 
 # Environments
 .env
+!tests/dotenv/.env
+
 .venv
 env/
 venv/

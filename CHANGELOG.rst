@@ -1,3 +1,10 @@
+1.1.1
+~~~~~
+11.08.2023
+    * Add Makefile;
+    * Add `load_multiple_dotenvs` method in `jara_utils.dotenv_configs`;
+    * Add two new extras: `dotenv` and `all`;
+
 1.1.0
 ~~~~~
 10.08.2023
