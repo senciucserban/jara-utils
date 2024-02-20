@@ -8,7 +8,7 @@ black:
 mypy:
 	poetry run mypy --install-types --non-interactive .
 bandit:
-	poetry run bandit -r . -x ./tests,./test
+	poetry run bandit -r . -x ./tests,./test,./.venv
 test:
 	poetry run pytest tests/
 
