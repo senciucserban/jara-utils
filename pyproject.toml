@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "jara-utils"
-version = "1.1.1"
+version = "1.2.0"
 description = "A package with basic stuff."
 authors = ["Serban Senciuc <senciuc.serban@gmail.com>"]
 readme = "README_pypi.rst"
 repository = "https://github.com/senciucserban/jara-utils"
 classifiers = [
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Utilities"
 ]
 packages = [
@@ -15,10 +15,10 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-pytz = "*"
-types-pytz = "*"
+python = "^3.11"
 python-dotenv = {version = "^1.0.0", optional = true}
+pytz = "^2024.1"
+types-pytz = "^2024.1.0.20240203"
 
 [tool.poetry.extras]
 dotenv = ["python-dotenv"]

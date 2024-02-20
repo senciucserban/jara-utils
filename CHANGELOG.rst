@@ -1,3 +1,9 @@
+1.2.0
+~~~~~
+20.02.2024
+    * Update dependencies;
+    * Add dependabot;
+
 1.1.1
 ~~~~~
 11.08.2023
