@@ -38,7 +38,7 @@ ipython = "^8.8.0"
 ipdb = "^0.13.11"
 
 [tool.poetry.group.lint.dependencies]
-mypy = ">=0.991,<1.9"
+mypy = ">=0.991,<1.10"
 bandit = "^1.7.4"
 ruff = "^0.0.284"
 black = ">=23.7,<25.0"
