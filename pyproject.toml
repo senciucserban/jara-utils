@@ -40,7 +40,7 @@ ipdb = "^0.13.11"
 [tool.poetry.group.lint.dependencies]
 mypy = ">=0.991,<1.10"
 bandit = "^1.7.4"
-ruff = "^0.0.284"
+ruff = ">=0.0.284,<0.3.3"
 black = ">=23.7,<25.0"
 
 [build-system]
@@ -50,7 +50,11 @@ build-backend = "poetry.core.masonry.api"
 # -------------------- ruff --------------------
 [tool.ruff]
 src = ["src", "test"]
-format = "grouped"
+output-format = "grouped"
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
 select = ["ALL"]
 ignore = ["D", "S", "DTZ", "FBT", "ANN101", "ANN102", "ANN401", "ANN002", "ANN003"]
 
@@ -59,18 +63,16 @@ fixable = ["ALL"]
 unfixable = []
 
 per-file-ignores = {}
-line-length = 120
-target-version = "py311"
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-[tool.ruff.flake8-quotes]
+[tool.ruff.lint.flake8-quotes]
 docstring-quotes = "double"
 inline-quotes = "single"
 multiline-quotes = "single"
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 combine-as-imports = true
 known-first-party = ["src"]
 

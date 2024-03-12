@@ -2,7 +2,7 @@ RUFF_FORMAT=grouped
 .DEFAULT_GOAL := all
 
 ruff:
-	poetry run ruff check . --format=$(RUFF_FORMAT)
+	poetry run ruff check . --output-format=$(RUFF_FORMAT)
 black:
 	poetry run black . --check
 mypy:
