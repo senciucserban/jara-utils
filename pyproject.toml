@@ -40,7 +40,7 @@ ipdb = "^0.13.11"
 [tool.poetry.group.lint.dependencies]
 mypy = ">=0.991,<1.10"
 bandit = "^1.7.4"
-ruff = ">=0.0.284,<0.3.3"
+ruff = ">=0.0.284,<0.3.4"
 black = ">=23.7,<25.0"
 
 [build-system]
